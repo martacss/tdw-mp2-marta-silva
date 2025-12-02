@@ -1,0 +1,592 @@
+html,
+body {
+  margin: 0;
+  font-family: "Urbanist", sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+/* Menu.jsx */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  padding: 20px 20px;
+}
+
+.navbar img {
+  height: 30px;
+}
+
+.navbar .nav-link {
+  color: black;
+  font-size: 15px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.navbar .nav-link:hover {
+  color: #2f855a;
+}
+
+
+
+/* Home.jsx */
+
+.home-container {
+  height: 100vh;
+  align-items: center;
+  background-image: url("/fundo16.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  padding: 120px;
+}
+
+.search-container {
+  padding-top: 130px;
+}
+
+
+
+/* Search.jsx */
+
+.searchBar {
+  padding: 30px 200px;
+  display: flex;
+  gap: 10px;
+  max-height: 150px;
+}
+
+.searchBar input {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.botaoSearch {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  color: white;
+  cursor: pointer;
+}
+
+.botaoSearch:hover {
+  background-color: #4caf50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* PlantsSearch.jsx */
+
+.query-info {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.loading-msg {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.no-results-msg {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+}
+
+.fav-button {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.fav-button:hover {
+  background-color: #4caf50;
+}
+
+
+.scroll-indicator {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  margin: 8px auto 50px auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: bounce-down 1.2s infinite;
+}
+
+.scroll-indicator::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 15px;
+  height: 15px;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+}
+
+/* animação */
+@keyframes bounce-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+
+
+/* Login.jsx e Signup.jsx */
+
+.auth-container {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form input {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 8px 10px;
+}
+
+.auth-field {
+  text-align: left;
+}
+
+.auth-field label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.auth-field input {
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.auth-button {
+  align-items: center;
+  height: 45px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background: #2f855a;
+}
+
+.google-button {
+  height: 45px;
+  margin-top: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.google-button:hover {
+  background: #2d2d2d;
+}
+
+.auth-switch {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.auth-switch .switch-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.auth-switch .switch-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Profile.jsx e Mygarden.jsx */
+
+.profile-container {
+  min-height: 100vh;
+  align-items: center;
+  background: linear-gradient(160deg, #ffffff, #ebebeb, #a1a1a1);
+  margin-bottom: 0;
+  padding: 120px 80px 40px 80px;
+}
+
+.profile-infos {
+  text-align: center;
+}
+
+.logout-button {
+  height: 45px;
+  width: 20%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #c53030;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.plants-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px;
+  padding-bottom: 40px;
+}
+
+.title-mygarden {
+  text-align: center;
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.plants-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+}
+
+.plants-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.plants-card h5 {
+  margin: 15px 0 5px;
+}
+
+.plants-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.card-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.card-buttons button {
+  flex: 1; /* cada botão ocupa metade da largura disponível */
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.details-button {
+  background: #4caf50;
+  color: white;
+}
+
+.details-button:hover {
+  background: #2f855a;
+}
+
+.remove-button {
+  background: black;
+  color: white;
+}
+
+.remove-button:hover {
+  background: #c53030;
+}
+
+.empty-garden-state {
+  text-align: center;
+  color: #4caf50;
+  margin-top: 40px;
+}
+
+.empty-garden-state p {
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+
+
+/* MusicPlayer.jsx */
+
+.music-widget-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 320px;
+  padding: 10px 14px;
+  background: rgba(10, 25, 20, 0.96);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.music-left {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.music-dot {
+  width: 3px;
+  height: 8px;
+  border-radius: 999px;
+  background: #4caf50;
+  box-shadow: 0 0 7px rgba(72, 187, 120, 0.7);
+}
+
+.music-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.music-nowplaying {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.music-title {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-artist {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.music-middle {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.music-icon-button {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-icon-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.play-button {
+  width: 50px;
+  font-size: 15px;
+  padding: 4px 10px;
+  background: #4caf50;
+  color: #0b1410;
+  font-weight: 600;
+}
+
+.play-button:hover {
+  background: #4caf50;
+  opacity: 0.9;
+}
+
+.music-list-container {
+  position: fixed;
+  right: 20px;
+  top: 65px;
+  bottom: 65px;
+  width: 320px;
+  height: auto;
+  padding: 12px 14px;
+  background: rgba(15, 32, 26, 0.98);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+.music-list-container h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.music-list {
+  max-height: 100%;
+  padding-bottom: 50px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.music-list-item {
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  border: none;
+  padding: 6px 8px;
+  background: rgba(76, 175, 80, 0.07);
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.music-list-item:hover {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.music-list-item.active {
+  background: rgb(76, 175, 80, 0.35);
+}
+
+.music-list-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.music-list-artist {
+  font-size: 11px;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+
+
+
+
+
+
+
+
+
+
+.plant-name-clickable {
+  cursor: text;
+  margin: 8px 0 4px;
+}
+
+.plant-name-clickable:hover {
+  text-decoration: underline dotted;
+}
+
+.plant-name-input {
+  width: 100%;
+  padding: 4px 6px;
+  margin: 8px 0 4px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.notification.info { background-color: #3498db; }
+.notification.success { background-color: #2ecc71; }
+.notification.error { background-color: #e74c3c; }
+.notification.warning { background-color: #000000;}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
